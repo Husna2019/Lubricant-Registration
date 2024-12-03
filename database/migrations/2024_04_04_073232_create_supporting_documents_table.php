@@ -18,10 +18,14 @@ return new class extends Migration
       $table->string('extension');
       $table->string('size');
       $table->string('type');
-      $table->string('company_detail_id');
-
+      
+      $table->unsignedBigInteger('company_detail_id'); // Change to unsignedBigInteger
       $table->timestamps();
-    });
+      
+      // Add the foreign key constraint
+      $table->foreign('company_detail_id')->references('id')->on('company_details')->onDelete('cascade');
+  });
+  
   }
 
   /**

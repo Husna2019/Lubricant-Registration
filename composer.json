@@ -9,12 +9,16 @@
   "license": "MIT",
   "require": {
     "php": "^8.2",
+    "dompdf/dompdf": "^3.0",
     "guzzlehttp/guzzle": "^7.2",
+    "inertiajs/inertia-laravel": "^1.3",
     "laravel/framework": "^10.39",
     "laravel/jetstream": "^4.3",
     "laravel/sanctum": "^3.2",
     "laravel/tinker": "^2.8",
-    "ramsey/uuid": "^4.7"
+    "maatwebsite/excel": "^3.1",
+    "ramsey/uuid": "^4.7",
+    "spatie/laravel-permission": "^6.9"
   },
   "require-dev": {
     "fakerphp/faker": "^1.9.1",

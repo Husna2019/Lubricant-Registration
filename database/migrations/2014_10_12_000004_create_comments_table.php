@@ -15,11 +15,17 @@ return new class extends Migration
       $table->id();
       $table->string('application_id');
       $table->string('stage_id');
-      $table->string('user_id');
+      
+      $table->unsignedBigInteger('user_id'); // Change to unsignedBigInteger
       $table->string('comments');
       $table->rememberToken();
       $table->timestamps();
-    });
+      
+      // Add the foreign key constraint
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+      $table->foreign('application_id')->references('id')->on('applications')->onDelete('cascade');
+  });
+  
   }
 
   /**

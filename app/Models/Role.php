@@ -18,4 +18,6 @@ class Role extends Model
   {
     return $this->hasManyThrough(UserRole::class, "role_id", "id");
   }
+
+  
 }

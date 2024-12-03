@@ -69,12 +69,12 @@
     <h2>Lubricant Registration System - Notifications</h2>
     <div class="notification">
       <h3>New Notification</h3>
-      <p>Your lubricant registration application with Application Number <strong>12345</strong> has been approved.</p>
+      <p>Your lubricant registration application with Application Number <strong>LUB-2024/0001</strong> has been approved.</p>
       <button class="btn-mark-read">Mark as Read</button>
     </div>
     <div class="notification">
       <h3>New Notification</h3>
-      <p>Your lubricant registration application with Application Number <strong>67890</strong> is pending review.</p>
+      <p>Your lubricant registration application with Application Number <strong>LUB-2024/0001</strong> is pending review.</p>
       <button class="btn-mark-read">Mark as Read</button>
     </div>
   </div>

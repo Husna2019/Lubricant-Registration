@@ -1,6 +1,6 @@
 @extends('layouts/layoutMaster')
 
-@section('title', ' Vertical Layouts - Forms')
+@section('title', ' Edit User')
 
 <!-- Vendor Styles -->
 @section('vendor-style')
@@ -27,13 +27,13 @@
 @endsection
 
 @section('content')
-<h4 class="py-3 mb-4"><span class="text-muted fw-light">Forms/</span> Vertical Layouts</h4>
+<h4 class="py-3 mb-4"><span class="text-muted fw-light"></span> Edit User Information</h4>
 
 
 
 <!-- Multi Column with Form Separator -->
 <div class="card mb-4">
-  <h5 class="card-header">Edit User Informations</h5>
+ <!-- <h5 class="card-header">Edit User Informations</h5>-->
   <form class="card-body" method="POST" action="{{ route('users.update', $user->id) }}">
     @method('PATCH')
     @csrf

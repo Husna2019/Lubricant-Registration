@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\App;
-
+use App\Models\CompanyDetail;
 
 
 
@@ -24,6 +24,6 @@ class ContactPerson extends Model
 
   public function companyDetail()
   {
-    return $this->belongsTo(CompanyDetail::class, "company_detail_id", "id");
+      return $this->belongsTo(CompanyDetail::class, 'company_detail_id', 'id');
   }
 }

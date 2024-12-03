@@ -10,3 +10,5 @@ $configData = Helper::appClasses();
 (( $configData["layout"] === 'blank') ? 'layouts.blankLayout' :
 (($configData["layout"] === 'front') ? 'layouts.layoutFront' : 'layouts.contentNavbarLayout') )))
 @endisset
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

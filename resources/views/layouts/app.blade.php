@@ -77,6 +77,8 @@
       @yield('content')
     </main>
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 </body>
 
 </html>

@@ -157,8 +157,9 @@
                 <i class="ti ti-dots-vertical ti-sm mx-1"></i>
               </a>
               <div class="dropdown-menu dropdown-menu-end m-0" style="">
-                <a href="" class="dropdown-item">View</a>
+                <a href="{{ route('users.viewAddedUser', $user->id) }}" class="dropdown-item">View</a>
                 <a href="javascript:;" class="dropdown-item">Suspend</a>
+                <a href="{{ route('users.assignRole', $user->id) }}" class="dropdown-item">Assign Role</a>
               </div>
             </div>
           </td>
@@ -257,6 +258,16 @@
         <button type="submit" class="btn btn-primary me-sm-3 me-1 data-submit">Submit</button>
         <button type="reset" class="btn btn-label-secondary" data-bs-dismiss="offcanvas">Cancel</button>
       </form>
+      {{-- <div class="div">
+        @foreach ($users as $user)
+        <a href="{{ route('role', ['id' => $user->id]) }}" class="btn btn-primary">
+            View {{ $user->name }}'s Roles
+        </a>
+    @endforeach
+    
+      </div> --}}
+    
+    
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CompanyDetail;
 
 class SupportingDocument extends Model
 {
@@ -22,4 +23,8 @@ class SupportingDocument extends Model
     // 'equipment_manufacturer',
     // 'company_detail_id',
   ];
+  public function companyDetail()
+    {
+        return $this->belongsTo(CompanyDetail::class, 'company_detail_id', 'id');
+    }
 }

@@ -2,33 +2,48 @@
   "menu": [
     {
       "url": "/pages/pages-home",
-      "name": "Dashboard",
+      "name": "Home",
       "icon": "menu-icon tf-icons ti ti-smart-home text-primary",
       "slug": "pages-home"
     },
     {
       "url": "/pages/company-details",
       "name": "Register Lubricant",
-      "icon": "menu-icon tf-icons ti ti-settings text-warning",
+      "icon": "menu-icon tf-icons fa fa-oil-can text-warning",
       "slug": "dashboard-analytics"
     },
+    
+    
     {
-      "url": "/view-result",
-      "name": "View results",
-      "icon": "menu-icon tf-icons ti ti-graph text-success",
+      "url": "/reviewAssign",
+      "name": "Applications",
+      "icon": "menu-icon tf-icons ti ti-clipboard text-success",
       "slug": "dashboard-analytics"
     },
+    
+
     {
-      "url": "/re-apply",
-      "name": "Request Modification",
-      "icon": "menu-icon tf-icons ti ti-pencil text-warning",
+      "url": "/content/user/index",
+      "name": "User",
+      "icon": "menu-icon tf-icons ti ti-user text-primary",
       "slug": "dashboard-analytics"
-    },
-    {
-      "url": "/notification",
-      "name": "Read Notifications",
-      "icon": "menu-icon tf-icons ti ti-bell text-info",
-      "slug": "dashboard-analytics"
-    }
+  },
+  {
+    "url": "/reportLTC",
+    "name": "Report",
+    "icon": "menu-icon tf-icons ti ti-files text-primary",
+    "slug": "dashboard-analytics"
+},
+{
+  "url": "/content/pages/request-modification",
+  "name": "Request Modification",
+  "icon": "menu-icon tf-icons ti ti-pencil text-warning", 
+  "slug": "dashboard-analytics"
+}
+
+
+
+  
+    
   ]
 }

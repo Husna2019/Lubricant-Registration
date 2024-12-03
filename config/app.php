@@ -16,7 +16,7 @@ return [
     |
     */
 
-  'name' => env('APP_NAME', 'Laravel'),
+  'name' => env('APP_NAME', 'LUBRICANTREGISTRATIONSYSTEM'),
 
   /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,8 @@ return [
     App\Providers\EventServiceProvider::class,
     App\Providers\RouteServiceProvider::class,
     App\Providers\MenuServiceProvider::class,
+  
+
   ])->toArray(),
 
   /*
@@ -185,6 +187,8 @@ return [
   'aliases' => Facade::defaultAliases()->merge([
     // 'Example' => App\Facades\Example::class,
     'Helper' => App\Helpers\Helpers::class,
+  
+
   ])->toArray(),
 
 ];

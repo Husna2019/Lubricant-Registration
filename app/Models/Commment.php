@@ -24,4 +24,7 @@ class Comment extends Model
   {
     return $this->belongsTo(CompanyDetail::class, "company_detail_id", "id");
   }
+  {
+        return $this->belongsTo(User::class);
+    }
 }

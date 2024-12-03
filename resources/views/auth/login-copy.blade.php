@@ -1,4 +1,4 @@
-@extends('layouts/layoutMaster')
+{{-- @extends('layouts/layoutMaster')
 
 @section('content')
 <div class="container-xxl">
@@ -15,7 +15,7 @@
             </a>
           </div>-->
           <!-- /Logo -->
-          <h4 class="mb-1 pt-2">Welcome to Lubricant system registration system </h4>
+          <h4 class="mb-1 pt-2">Welcome to Lubricant  registration system </h4>
 
 
           <form id="formAuthentication" class="mb-3" action="{{url('/')}}" method="GET">
@@ -64,4 +64,4 @@
     </div>
   </div>
 </div>
-@endsection
+@endsection --}}

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\CompanyDetail;
 
 class LubricantDetail extends Model
 {
@@ -19,6 +20,6 @@ class LubricantDetail extends Model
 
   public function companyDetail()
   {
-    return $this->belongsTo(CompanyDetail::class, "company_detail_id", "id");
+      return $this->belongsTo(CompanyDetail::class, 'company_detail_id', 'id');
   }
 }

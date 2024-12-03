@@ -11,7 +11,7 @@ return new class extends Migration
    */
   public function up(): void
   {
-    Schema::create('contact_people', function (Blueprint $table) {
+    Schema::create('contact_people', function (Blueprint $table) { 
       $table->increments('id');
       $table->string('name');
       $table->string('title');
@@ -19,9 +19,18 @@ return new class extends Migration
       $table->string('cellphone');
       $table->string('cellphone1');
       $table->string('email2');
-      $table->integer('company_detail_id');
+   //   $table->integer('company_detail_id'); 
+      $table->timestamps(); 
+
+      // Add the foreign key constraint
+      $table->unsignedBigInteger('company_detail_id'); // Ensures it's an unsignedBigInteger
       $table->timestamps();
-    });
+  
+      // Add the foreign key constraint
+      $table->foreign('company_detail_id')->references('id')->on('company_details')->onDelete('cascade');
+  });
+  
+  
   }
 
   /**

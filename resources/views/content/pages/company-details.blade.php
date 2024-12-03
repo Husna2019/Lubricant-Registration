@@ -32,7 +32,6 @@
 <div class="row">
 
   <!-- Default Icons Wizard -->
-
   <div class="col-12 mb-4">
 
     <div class="bs-stepper wizard-icons wizard-icons-example mt-2">
@@ -108,7 +107,7 @@
           <!-- Account Details -->
           <div id="account-details" class="content">
             <div class="content-header mb-3">
-              <h6 class="mb-0">Company Details</h6>
+              
               <small>Enter Your Company Details.</small>
             </div>
             <div class="row g-3">
@@ -135,15 +134,15 @@
                   <span class="small danger">{{ $errors->first('region') }}</span>
                   @endif
                   <Add options for regions>
-                    <option value="region1">Select Region</option>
+                    <option value="--Select--">Select Region</option>
                     <option value="Dodoma">Dodoma</option>
                     <option value="Mwanza">Mwanza</option>
-                    <option value="region3">Mbeya</option>
-                    <option value="region3">Moshi</option>
-                    <option value="region3">Tabora</option>
-                    <option value="region3">Singida</option>
-                    <option value="region3">Kilimanjaro</option>
-                    <option value="region3">Dar es salam</option>
+                    <option value="Mbeya">Mbeya</option>
+                    <option value="Moshi">Moshi</option>
+                    <option value="Tabora">Tabora</option>
+                    <option value="Singida">Singida</option>
+                    <option value="Klimanjaro">Kilimanjaro</option>
+                    <option value="Dar Es Salaam">Dar es salam</option>
                 </select>
               </div>
               <div class="col-sm-6 form-password-toggle">
@@ -183,6 +182,10 @@
                 <button type="button" class="btn btn-label-secondary btn-prev" disabled> <i class="ti ti-arrow-left me-sm-1"></i>
                   <span class="align-middle d-sm-inline-block d-none">Previous</span>
                 </button>
+                
+                <button type="submit" class="btn btn-success" id="saveBtn">
+                  <span class="align-middle d-sm-inline-block d-none me-sm-1">Save</span> <i class="ti ti-save"></i>
+                </button>
                 <button type="button" class="btn btn-primary btn-next"> <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span> <i class="ti ti-arrow-right"></i></button>
               </div>
             </div>
@@ -196,7 +199,7 @@
           <!-- Personal Info -->
           <div id="personal-info" class="content">
             <div class="content-header mb-3">
-              <h6 class="mb-0">Personal Info</h6>
+              
               <small>Enter Your Personal Info.</small>
             </div>
             <div class="row g-3">
@@ -252,51 +255,69 @@
                 <button type="button" class="btn btn-label-secondary btn-prev"> <i class="ti ti-arrow-left me-sm-1"></i>
                   <span class="align-middle d-sm-inline-block d-none">Previous</span>
                 </button>
-                <button type="button" class="btn btn-primary btn-next"> <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span> <i class="ti ti-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-          <!-- Lubricant details -->
-          <div class="row g-3">
-            <div id="address" class="content">
-              <div class="content-header mb-3">
-                <h6 class="mb-0">Lubricant </h6>
-                <small>Enter Your lubricant details.</small>
-              </div>
-              <div class="form-group">
-                <label for="lubricantTable">Lubricant Details:</label>
-                <table class="table" id="lubricantTable">
-                  <thead>
-                    <tr>
-                      <th name="SerialNumber">S/No</th>
-                      <th name="lubricant_Name">Lubricant Name</th>
-                      <th name="lubricant_type">Lubricant Type</th>
-                      <th name="lubricant_Perfomance_Level">Lubricant Performance Level</th>
-                      <th name="lubricant_Brand">Lubricant Brand </th>
-                      <th name="number_Certification">No & Certification Name</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                  </tbody>
-                </table>
-                <button type="button" class="btn btn-primary" id="addLubricantRow">Add Lubricant</button>
-              </div>
-
-
-              <div class="col-12 d-flex justify-content-between">
-                <button type="button" class="btn btn-label-secondary btn-prev"> <i class="ti ti-arrow-left me-sm-1"></i>
-                  <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                <button type="submit" class="btn btn-success" id="saveBtn">
+                  <span class="align-middle d-sm-inline-block d-none me-sm-1">Save</span> <i class="ti ti-save"></i>
                 </button>
+              
+               
                 <button type="button" class="btn btn-primary btn-next"> <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span> <i class="ti ti-arrow-right"></i></button>
               </div>
             </div>
           </div>
+
+
+
+
+
+         <!-- Lubricant Details Section -->
+<div class="row g-3">
+  <div id="address" class="content">
+    <div class="content-header mb-3">
+
+      <small class="text-muted">Enter your lubricant details below.</small>
+    </div>
+
+    <!-- Table Section -->
+    <div class="form-group">
+      <label for="lubricantTable" class="form-label">Lubricant Details</label>
+      <div class="table-responsive">
+        <table class="table table-striped table-hover" id="lubricantTable">
+          <thead class="table-primary">
+            <tr>
+              <th scope="col">S/No</th>
+              <th scope="col">Lubricant Name</th>
+              <th scope="col">Lubricant Type</th>
+              <th scope="col">Performance Level</th>
+              <th scope="col">Brand</th>
+              <th scope="col">Certification No & Name</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamic Rows Go Here -->
+          </tbody>
+        </table>
+      </div>
+      <button type="button" class="btn btn-sm btn-primary mt-3" id="addLubricantRow">
+        <i class="ti ti-plus me-1"></i>Add Lubricant
+      </button>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="col-12 d-flex justify-content-between mt-4">
+      <button type="button" class="btn btn-label-secondary btn-prev">
+        <i class="ti ti-arrow-left me-sm-1"></i>
+        <span class="align-middle">Previous</span>
+      </button>
+      <button type="submit" class="btn btn-success" id="saveBtn">
+        <span class="align-middle d-sm-inline-block d-none me-sm-1">Save</span> <i class="ti ti-save"></i>
+      </button>
+      <button type="button" class="btn btn-primary btn-next">
+        <span class="align-middle me-sm-1">Next</span>
+        <i class="ti ti-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
 
 
 
@@ -305,61 +326,63 @@
           <!-- Supporting documents -->
           <div id="social-links" class="content">
             <div class="content-header mb-3">
-              <h6 class="mb-0">Supporting Documents</h6>
+            
               <small>Enter Your Documents</small>
             </div>
             <div class="row g-3">
-              <table class="table" style="margin: 0 auto;">
-                <thead>
+              <table class="table" style="width: 90%; margin: 20px auto; border-collapse: collapse; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: #fff;">
+                <thead style="background-color: #c9e4e3; color: white;">
                   <tr>
-                    <th>S/No</th>
-                    <th>No & Name of Certification</th>
-                    <th>Upload Certification</th>
+                    <th style="text-align: left; padding: 10px 15px; border: 1px solid #ddd; text-transform: uppercase; letter-spacing: 0.05em;">S/No</th>
+                    <th style="text-align: left; padding: 10px 15px; border: 1px solid #ddd; text-transform: uppercase; letter-spacing: 0.05em;">No & Name of Certification</th>
+                    <th style="text-align: left; padding: 10px 15px; border: 1px solid #ddd; text-transform: uppercase; letter-spacing: 0.05em;">Upload Certification</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>
-                      <div class="col-sm-12">
-                        <label for="brand_ownership">Proof of Brand Ownership (Mandatory)</label>
-                      </div>
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">1</td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <label for="brand_ownership">Proof of Brand Ownership <span style="color: red; font-weight: bold;">(Mandatory)</span></label>
                     </td>
-                    <td><input type="file" id="brand_ownership" class="form-control-file" name="brand_ownership"></td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <input type="file" id="brand_ownership" name="brand_ownership" style="width: 100%; padding: 5px; font-size: 14px;">
+                    </td>
                   </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>
-                      <div class="col-sm-12">
-                        <label for="certification_bodies">Proof of Certification by Certification Bodies (Mandatory)</label>
-                      </div>
+                  <tr style="background-color: #fff;">
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">2</td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <label for="certification_bodies">Proof of Certification by Certification Bodies <span style="color: red; font-weight: bold;">(Mandatory)</span></label>
                     </td>
-                    <td><input type="file" id="certification_bodies" class="form-control-file" name="certification_bodies"></td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <input type="file" id="certification_bodies" name="certification_bodies" style="width: 100%; padding: 5px; font-size: 14px;">
+                    </td>
                   </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>
-                      <div class="col-sm-12">
-                        <label for="tbs_licence">Certified Copy of TBS Licence for Locally Blended Lubricant (optional)</label>
-                      </div>
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">3</td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <label for="tbs_licence">Certified Copy of TBS Licence for Locally Blended Lubricant (Optional)</label>
                     </td>
-                    <td><input type="file" id="tbs_licence" class="form-control-file" name="tbs_licence"></td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <input type="file" id="tbs_licence" name="tbs_licence" style="width: 100%; padding: 5px; font-size: 14px;">
+                    </td>
                   </tr>
-                  <tr>
-                    <td>4</td>
-                    <td>
-                      <div class="col-sm-12">
-                        <label for="equipment_manufacturer">Proof from Original Equipment Manufacturer (optional)</label>
-                      </div>
+                  <tr style="background-color: #fff;">
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">4</td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <label for="equipment_manufacturer">Proof from Original Equipment Manufacturer (Optional)</label>
                     </td>
-                    <td><input type="file" id="equipment_manufacturer" class="form-control-file" name="equipment_manufacturer"></td>
+                    <td style="text-align: left; padding: 10px 15px; border: 1px solid #ddd;">
+                      <input type="file" id="equipment_manufacturer" name="equipment_manufacturer" style="width: 100%; padding: 5px; font-size: 14px;">
+                    </td>
                   </tr>
                 </tbody>
               </table>
-
               <div class="col-12 d-flex justify-content-between">
                 <button type="button" class="btn btn-label-secondary btn-prev"> <i class="ti ti-arrow-left me-sm-1"></i>
                   <span class="align-middle d-sm-inline-block d-none">Previous</span>
+                </button>
+                <button type="submit" class="btn btn-success" id="saveBtn">
+                  <span class="align-middle d-sm-inline-block d-none me-sm-1">Save</span> <i class="ti ti-save"></i>
                 </button>
                 <button type="button" class="btn btn-primary btn-next"> <span class="align-middle d-sm-inline-block d-none me-sm-1">Next</span> <i class="ti ti-arrow-right"></i></button>
               </div>

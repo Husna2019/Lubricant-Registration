@@ -18,12 +18,16 @@ return new class extends Migration
       $table->string('lubricant_performance_level');
       $table->string('lubricant_brand');
       $table->string('certification_name');
-      $table->string('approval_status')->default('Pending');//Approved, Appeal, Rejected
-
+      $table->string('approval_status')->default('Pending'); // Approved, Appeal, Rejected
       
-      $table->integer('company_detail_id');
+      $table->unsignedBigInteger('company_detail_id'); // Ensures it's an unsignedBigInteger
       $table->timestamps();
-    });
+  
+      // Add the foreign key constraint
+      $table->foreign('company_detail_id')->references('id')->on('company_details')->onDelete('cascade');
+  });
+  
+  
   }
 
   /**

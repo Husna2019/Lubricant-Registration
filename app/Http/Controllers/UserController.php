@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
+
+
 
 class UserController extends Controller
 {
@@ -50,15 +54,13 @@ class UserController extends Controller
     // dd($validateData);
     User::create($validateData);
     return redirect()->back()->withSuccess('User Created Successfull');
+    
   }
 
   /**
    * Display the specified resource.
    */
-  public function show(string $id)
-  {
-    //
-  }
+  
 
   /**
    * Show the form for editing the specified resource.
@@ -106,4 +108,69 @@ class UserController extends Controller
   {
     //
   }
+
+
+   //FOR ROLES
+   
+   // Show role assignment form
+  
+       // Show user details
+      
+           // Show user details
+           public function show($id)
+           {
+               $user = User::findOrFail($id);
+              // return view('content.user.show', compact('user'));
+             return redirect()->route('users.show', $user->id)->with('success', 'Role assigned successfully');
+             // return response()->json(['message' => 'Role assigned successfully']);
+           }
+           
+       
+           // Show role assignment form
+           public function assignRoleForm($id)
+           {
+               $user = User::findOrFail($id);
+               $roles = Role::all(); // Retrieve all roles
+               $permissions = Permission::all(); // Assuming permissions are retrieved similarly
+
+               return view('content.user.assign-role', compact('user', 'roles', 'permissions'));
+              // return view('content.user.assign-role', compact('user', 'roles'));
+           }
+       
+           // Handle role assignment
+           public function assignRole(Request $request, $id)
+           {
+               $user = User::findOrFail($id);
+       
+               $request->validate([
+                   'role' => 'required|exists:roles,name',
+               ]);
+       
+               // Assign the selected role
+               $user->assignRole($request->role);
+       
+              //  return redirect()->route('users.show', $user->id)->with('success', 'Role assigned successfully');
+              }       
+   
+       // Update user role
+       public function updateRole(Request $request, $id)
+       {
+           $user = User::findOrFail($id);
+   
+           $request->validate([
+               'role_id' => 'required|exists:roles,id',
+           ]);
+   
+           // Sync the selected role
+           $user->roles()->sync([$request->role_id]);
+   
+           return redirect()->route('users.index')->with('success', 'Role assigned successfully.');
+       }
+   
+       // Show user index
+      
+   
+   
+
+  
 }

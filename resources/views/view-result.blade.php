@@ -1,94 +1,58 @@
-@extends('layouts/layoutMaster')
+@extends('layouts.layoutMaster')
 
-@section('title', 'Home')
+@section('title', 'View Registration Result')
 
 @section('content')
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Review Lubricant Registration Results</title>
-  <style>
-    /*  CSS styles here */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #f5f5f5;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h2 {
-      color: #333;
-      text-align: center;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-
-    th,
-    td {
-      padding: 10px;
-      border-bottom: 1px solid #ddd;
-      text-align: left;
-    }
-
-    th {
-      background-color: #f2f2f2;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      padding: 10px 0;
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-    }
-
-    .btn:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Registration Result</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .result {
+            margin-bottom: 20px;
+        }
+        .result p {
+            margin: 0;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="container">
-    <h2>Review Lubricant Registration Results</h2>
-    <table>
-      <tr>
-        <th>Application Number</th>
-        <td>12345</td>
-      </tr>
-      <tr>
-        <th>Date Submitted</th>
-        <td>April 14, 2024</td>
-      </tr>
-      <tr>
-        <th>Status</th>
-        <td>Approved</td>
-      </tr>
-      <!-- Add more rows for other details -->
-    </table>
-    <h3>Results Summary</h3>
-    <p>Based on the review, the lubricant product has been approved for registration.</p>
-    <p>Please find attached the detailed report for your reference.</p>
-    <a href="/path/to/detailed/report.pdf" class="btn" download>Download Report</a>
-  </div>
+    <div class="container">
+        <h1>Registration Result</h1>
+        <div class="result">
+            <h3>User Information</h3>
+            <p><strong>Name:</strong> John Doe</p>
+            <p><strong>Email:</strong> johndoe@example.com</p>
+            <p><strong>Phone:</strong> 123-456-7890</p>
+        </div>
+        <div class="result">
+            <h3>Lubricant Details</h3>
+            <p><strong>Lubricant Name:</strong> Super Lubricant</p>
+            <p><strong>Lubricant Type:</strong> Synthetic</p>
+            <p><strong>Performance Level:</strong> High</p>
+            <p><strong>Approval Status:</strong> Approved</p>
+        </div>
+        <div class="result">
+            <h3>Evaluation</h3>
+            <p><strong>Recommendation:</strong> Recommend</p>
+            <p><strong>Remarks:</strong> Meets all standards and requirements.</p>
+        </div>
+    </div>
 </body>
 @endsection
+ 
